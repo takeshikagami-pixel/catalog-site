@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catalog</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 12px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .card .info {
+      padding: 8px;
+    }
+
+    .price {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      max-width: 400px;
+      width: 90%;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .modal-content img {
+      width: 100%;
+    }
+
+    .modal-body {
+      padding: 12px;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Product Catalog</h1>
+<div class="grid" id="grid"></div>
+
+<div class="modal" id="modal">
+  <div class="close" onclick="closeModal()">×</div>
+  <div class="modal-content" id="modalContent"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
